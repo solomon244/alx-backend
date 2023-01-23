@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-"""function named index_range that takes two integer arguments page and page_size
-"""
-from typing import Tuple
+""" function named index_range that takes two integer arguments page and page_size """
 
 
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """retrieves the index range from a given page
-    """
-    end_index = page * page_size
-    start_index = end_index - page_size
-    return (start_index, end_index)
+def index_range(page, page_size):
+    """Retrieves the index range from a given page """
+    if page and page_size:
+        start_index = (page - 1) * page_size
+        end_index = start_index + page_size
+        return start_index, end_index
