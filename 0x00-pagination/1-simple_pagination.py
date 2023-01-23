@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Simple pagination
+"""Simple pagination sample.
 """
 import csv
 from typing import List, Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """Retrieves the index range from a given page 
+    """Retrieves the index range from a given page and page size.
     """
     start = (page - 1) * page_size
     end = start + page_size
@@ -19,7 +19,7 @@ class Server:
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
-        """Initializes a new Server 
+        """Initializes a new Server instance.
         """
         self.__dataset = None
 
