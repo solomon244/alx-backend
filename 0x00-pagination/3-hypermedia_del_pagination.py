@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
- removed from the dataset, the user does not miss items from dataset when changing page.
+Deletion-resilient hypermedia pagination
 """
 
 import csv
@@ -41,6 +41,13 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """
+        Takes 2 integer arguments and returns a dictionary with
+        the following key-value pairs:
+            index: index of the first item in the current page
+            next_index: index of the first item in the next page
+            page_size: the current page size
+            data: actual page of the dataset
+        Args:
             index(int): first required index
             page_size(int): required number of records per page
         """
