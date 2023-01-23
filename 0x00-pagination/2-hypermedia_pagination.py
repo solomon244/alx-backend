@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Implement a get_hyper method that takes the same arguments (and defaults) as get_page and returns a dictionary containing the following key-value pairs:
+"""
+Module 1-simple_pagination
 """
 
 import csv
@@ -27,14 +28,34 @@ class Server:
         return self.__dataset
 
     def index_range(self, page: int, page_size: int) -> Tuple[int, int]:
-        """ tuple holding the beginning and ending page numbers
+        """
+        Parameters
+        ---------
+        page: int
+            the start of pagination
+        page_size: int
+            the maximum number of object returned
+        Returns
+        -------
+        Tuple
+            tuple holding the beginning and ending page numbers
         """
         end_index = page * page_size
         start_index = end_index - page_size
         return (start_index, end_index)
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """the appropriate page of the dataset or the correct list of row
+        """
+        Parameters
+        ---------
+        page: int
+            the start of pagination
+        page_size: int
+            the maximum number of object returned
+        Returns
+        -------
+        list
+            the appropriate page of the dataset or the correct list of row
         """
         assert type(page) == int and page > 0
         assert type(page_size) == int and page_size > 0
@@ -45,7 +66,17 @@ class Server:
         return data[result[0]: result[1]]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """ the appropriate page of the dataset or the correct list of row
+        """
+        Parameters
+        ---------
+        page: int
+            the start of pagination
+        page_size: int
+            the maximum number of object returned
+        Returns
+        -------
+        dict
+            the appropriate page of the dataset or the correct list of row
         """
         total_pages = math.ceil(len(self.dataset()) / page_size)
         data = self.get_page(page, page_size)
