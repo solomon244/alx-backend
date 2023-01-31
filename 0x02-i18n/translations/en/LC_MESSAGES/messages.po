@@ -1,7 +1,7 @@
 # English translations for i18n.
 # Copyright (C) 2023 solomon legesse
 # This file is distributed under the same license as the i18n project.
-# solomon legesse <slegesse2444@gmail.com>, 2022.
+# solomon legesse <slegesse2444@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
