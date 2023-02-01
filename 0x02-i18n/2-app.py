@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""local for web page
+"""locale from request
 """
 from flask_babel import Babel
 from flask import Flask, render_template, request
 
 
 class Config:
-    """Babel configuration.
+    """Flask Babel configuration.
     """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -35,4 +35,3 @@ def get_index() -> str:
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
